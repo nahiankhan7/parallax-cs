@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.action-btn {
+     @apply btn btn-ghost font-roboto text-base md:text-lg lg:text-xl text-gray-300 hover:text-gray-100
+}
+
+.time-num {
+     @apply text-2xl md:text-4xl lg:text-6xl font-semibold tracking-wide
+}
+
+.time-letter {
+     @apply text-sm md:text-base lg:text-xl font-medium
+}
+
+.social-icon {
+     @apply text-xl text-gray-300 hover:text-gray-100 my-0 mx-3 inline-block transition duration-500 hover:-translate-y-2
+}

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax</title>
+    <!-- Font awesome cdn link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- Custom CSS stylesheet -->
+    <link rel="stylesheet" href="./output.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #home img {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        pointer-events: none;
+      }
+
+      #title {
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .close,
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .close {
+        right: 20px;
+        top: 20px;
+      }
+
+      .prev {
+        left: 20px;
+      }
+
+      .next {
+        right: 20px;
+      }
+
+      .prev:hover,
+      .next:hover,
+      .close:hover {
+        color: #bbb;
+      }
+
+      #subscribe span {
+        display: inline-block;
+        transition: 0.4s;
+        text-shadow: 0 50px #333;
+      }
+      #subscribe:hover span {
+        transform: translateY(-50px);
+      }
+
+      .waves .wave {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url(./images/wave.png);
+        background-size: 2000px 100px;
+      }
+
+      .waves .wave#wave1 {
+        z-index: 1000;
+        opacity: 1;
+        bottom: 0;
+        animation: animateWave 4s linear infinite;
+      }
+
+      .waves .wave#wave2 {
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10px;
+        animation: animateWave_2 4s linear infinite;
+      }
+
+      .waves .wave#wave3 {
+        z-index: 998;
+        opacity: 0.2;
+        bottom: 20px;
+        animation: animateWave 3s linear infinite;
+      }
+
+      .waves .wave#wave4 {
+        z-index: 997;
+        opacity: 0.7;
+        bottom: 30px;
+        animation: animateWave_2 3s linear infinite;
+      }
+
+      @keyframes animateWave {
+        0% {
+          background-position-x: 0px;
+        }
+        100% {
+          background-position-x: 2000px;
+        }
+      }
+
+      @keyframes animateWave_2 {
+        0% {
+          background-position-x: 2000px;
+        }
+        100% {
+          background-position-x: 0px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-200 overflow-x-hidden">
+    <!-- lightBox gallery -->
+    <div
+      id="lightbox"
+      class="lightbox hidden fixed z-[999] left-0 top-0 h-full w-full bg-black/80 justify-center items-center">
+      <span class="close"><i class="fa-solid fa-xmark"></i></span>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+      <img class="lightbox-image max-w-[80%] max-h-[80%] m-auto" src="" />
+    </div>
+
+    <!-- Header section -->
+    <header class="absolute w-full z-50 p-0">
+      <nav class="flex justify-center items-center p-4">
+        <a href="#about" class="action-btn">About</a>
+        <a href="#contact" class="action-btn">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Home section with parallax images -->
+    <section
+      id="home"
+      class="flex h-screen bg-gradient-to-t from-gray-200 to-purple-800 relative overflow-hidden">
+      <img src="./images/mount2.png" alt="Mountain 2" class="mount2" />
+      <img src="./images/mount1.png" alt="Mountain 1" class="mount1" />
+      <img src="./images/bush2.png" alt="Bush 2" class="bush2" />
+
+      <!-- home text -->
+      <div
+        id="title"
+        class="absolute flex flex-col justify-center items-center h-screen w-full px-4 sm:px-6 md:px-8 lg:px-12">
+        <!-- countdown timer -->
+        <div
+          class="flex justify-center items-center gap-x-8 md:gap-x-12 lg:gap-x-16 text-gray-100 font-roboto mb-6 md:mb-10">
+          <div class="flex flex-col items-center justify-center">
+            <p id="days" class="time-num">00</p>
+            <span class="time-letter">Days</span>
+          </div>
+
+          <div class="flex flex-col items-center justify-center">
+            <p id="hours" class="time-num">00</p>
+            <span class="time-letter">Hrs</span>
+          </div>
+
+          <div class="flex flex-col items-center justify-center">
+            <p id="minute" class="time-num">00</p>
+            <span class="time-letter">Min</span>
+          </div>
+
+          <div class="flex flex-col items-center justify-center">
+            <p id="second" class="time-num">00</p>
+            <span class="time-letter">Sec</span>
+          </div>
+        </div>
+
+        <h1
+          class="text-gray-100 font-light tracking-wide uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins">
+          We're Launching Our
+        </h1>
+        <h2
+          class="text-gray-100 font-semibold tracking-widest uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins mt-2">
+          New Website
+        </h2>
+      </div>
+
+      <img src="./images/bush1.png" alt="Bush 1" class="bush1" />
+      <img src="./images/leaf2.png" alt="Leaf 2" class="leaf2" />
+      <img src="./images/leaf1.png" alt="Leaf 1" class="leaf1" />
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="relative z-50 p-6 md:p-12 bg-[#3B3291]">
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 font-poppins text-center text-gray-100">
+        About Us
+      </h1>
+      <p
+        class="mb-2 text-sm md:text-base font-roboto text-center text-gray-200">
+        Be the First to Know – Subscribe for Updates!
+      </p>
+      <div class="flex justify-center items-center mb-12 font-roboto">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="p-2.5 bg-transparent border border-gray-300 hover:border-gray-200 text-gray-100 focus:outline focus:outline-1 focus:outline-gray-200 max-w-xs w-full" />
+        <button
+          id="subscribe"
+          class="border border-gray-100 p-2.5 tracking-widest inline-block uppercase transition duration-500 bg-black/50 focus:outline focus:outline-1 hover:bg-gray-100 overflow-hidden">
+          Subscribe
+        </button>
+      </div>
+
+      <!-- image -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+        <img
+          src="./images/adventure.jpg"
+          alt="Image 1"
+          class="gallery-item cursor-pointer" />
+        <img
+          src="./images/city.jpg"
+          alt="Image 2"
+          class="gallery-item cursor-pointer" />
+        <img
+          src="./images/education.jpg"
+          alt="Image 3"
+          class="gallery-item cursor-pointer" />
+        <img
+          src="./images/food.jpg"
+          alt="Image 4"
+          class="gallery-item cursor-pointer" />
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section
+      id="contact"
+      class="relative z-50 bg-[#3B3291] flex justify-end items-end min-h-[100vh]">
+      <footer
+        class="relative bg-[#3586ff] w-full min-h-[100px] p-6 md:p-12 flex flex-col justify-center items-center">
+        <!-- wave animation -->
+        <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
+        </div>
+
+        <!-- social icon -->
+        <div
+          class="relative flex flex-wrap justify-center items-center my-3 mx-0">
+          <a href="" class="social-icon"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="" class="social-icon"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a href="" class="social-icon"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="" class="social-icon"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a href="" class="social-icon"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+
+        <!-- go to top -->
+        <span
+          class="py-2 px-3 mt-2 bg-gray-200 text-xl text-gray-800 cursor-pointer opacity-80 hover:opacity-100 transition duration-300 active:-translate-y-3">
+          <i class="fa-solid fa-arrow-up"></i>
+        </span>
+
+        <!-- copyright -->
+        <p class="text-base mt-6 text-gray-200">
+          &copy; 2024 My Website. All rights reserved.
+        </p>
+      </footer>
+    </section>
+
+    <!-- JavaScript -->
+    <!-- subscribe button -->
+    <script>
+      const subscribeBtn = document.getElementById("subscribe");
+
+      if (subscribeBtn) {
+        subscribeBtn.innerHTML = subscribeBtn.innerText
+          .split("")
+          .map((letter, i) => {
+            if (letter === " ") {
+              return " ";
+            } else {
+              return `<span style="transition-delay:${
+                i * 50
+              }ms">${letter}</span>`;
+            }
+          })
+          .join("");
+      }
+    </script>
+
+    <!-- LightBox gallery script -->
+    <script src="./lightbox.js"></script>
+
+    <!-- Parallax script -->
+    <script src="./parallax.js"></script>
+  </body>
+</html>

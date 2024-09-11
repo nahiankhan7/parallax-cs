@@ -1,0 +1,77 @@
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+        <div
+          data-index="1"
+          class="group relative items-center justify-center overflow-hidden cursor-pointer gallery-items">
+          <div class="">
+            <img
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="./images/education.jpg"
+              alt="education" />
+          </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+          <div
+            class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
+            <h1 class="text-3xl uppercase font-bold text-white font-moderu">
+              Education
+            </h1>
+          </div>
+        </div>
+
+        <div
+          data-index="2"
+          class="group relative items-center justify-center overflow-hidden cursor-pointer gallery-items">
+          <div class="">
+            <img
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="./images/city.jpg"
+              alt="city" />
+          </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+          <div
+            class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
+            <h1 class="text-3xl uppercase font-bold text-white font-moderu">
+              City
+            </h1>
+          </div>
+        </div>
+
+        <div
+          data-index="3"
+          class="group relative items-center justify-center overflow-hidden cursor-pointer gallery-items">
+          <div class="">
+            <img
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="./images/food.jpg"
+              alt="food" />
+          </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+          <div
+            class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
+            <h1 class="text-3xl uppercase font-bold text-white font-moderu">
+              Food
+            </h1>
+          </div>
+        </div>
+
+        <div
+          data-index="4"
+          class="group relative items-center justify-center overflow-hidden cursor-pointer gallery-items">
+          <div class="">
+            <img
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="./images/adventure.jpg"
+              alt="adventure" />
+          </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+          <div
+            class="absolute inset-0 flex items-center justify-center text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700">
+            <h1 class="text-3xl uppercase font-bold text-white font-moderu">
+              Adventure
+            </h1>
+          </div>
+        </div>
+      </div>
